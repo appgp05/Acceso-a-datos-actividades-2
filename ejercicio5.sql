@@ -4,7 +4,6 @@ AS
     v_dept_no DEPART.DEPT_NO%TYPE;
     v_dnombre DEPART.DNOMBRE%TYPE;
     v_loc DEPART.LOC%TYPE;
-
 BEGIN
     SELECT DEPT_NO INTO v_dept_no FROM DEPART ORDER BY DEPT_NO DESC FETCH FIRST 1 ROWS ONLY;
     v_dept_no := v_dept_no + 10;
