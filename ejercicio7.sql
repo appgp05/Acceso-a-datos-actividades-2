@@ -1,0 +1,13 @@
+CREATE OR REPLACE PROCEDURE
+    SUBIR_SALARIO_MENOR_A_OFICIO
+AS
+    v_emp_no EMPLE.EMP_NO%TYPE;
+    v_cantidad_empleados NUMBER;
+    v_salario_total_oficio EMPLE.SALARIO%TYPE;
+BEGIN
+    v_cantidad_empleados := SELECT COUNT(*) FROM EMPLE WHERE OFICIO = 'EMPLEADO';
+    v_salario_total_oficio := SELECT SUM(SALARIO) FROM EMPLE WHERE OFICIO = 'EMPLEADO';
+END;
+/
+
+EXEC SUBIR_SALARIO_MENOR_A_OFICIO;
